@@ -1,9 +1,9 @@
-package com.luv2code.springcoredemo;
+package com.luv2code.utill;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class CricketCoach implements Coach{
+public class CricketCoach implements Coach {
     @Override
     public String getDailyWorkout() {
         return "practice fast Ball  15 minute";
