@@ -25,10 +25,16 @@ public class DemoController {
 //        myCoach = theCoach;
 //    }
 
+
     @Autowired
     public DemoController(@Qualifier("basketBallCoach") Coach theCoach){
         myCoach = theCoach;
     }
+
+//    @Autowired
+//    public  DemoController(Coach theCoach){
+//        myCoach=theCoach;
+//    }
 
     @GetMapping("/dailyworkout")
     public String getDailyWorkout(){
