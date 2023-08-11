@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "student")
-public class student {
+public class Student {
 
     //define fields
     @Id
@@ -26,10 +26,10 @@ public class student {
 //define constructor
 
 
-    public student() {
+    public Student() {
     }
 
-    public student(String firstName, String lastName, String email) {
+    public Student(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
