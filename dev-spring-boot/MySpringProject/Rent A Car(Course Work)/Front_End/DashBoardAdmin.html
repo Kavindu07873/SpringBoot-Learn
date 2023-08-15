@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>DashBoardAdmin</title>
+    <meta content="width=device-width initial-scale=1" name="viewport">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <title>Document</title>
+
+
+    <!--    <h1> Time is <span id="time"> </span></h1>-->
+    <!--    <script src="index.js">   </script>-->
+
+
+    <style>
+        ul > li {
+            cursor: pointer;
+        }
+
+        main > div > img {
+            position: absolute;
+            left: 0px;
+            bottom: 0;
+            right: 0;
+            top: 89px;
+            width: 100%;
+            height: 87%;
+            opacity: 50%;
+            z-index: 0;
+
+        }
+
+        main > aside {
+            display: inline-block;
+            left: 1%;
+            bottom: 0;
+            right: 0;
+            top: 29%;
+            width: 87%;
+            height: 48%;
+            /*overflow: hidden;*/
+            /*overflow-x: scroll;*/
+        }
+
+        main > aside > button {
+            width: 30%;
+            height: 20%;
+        }
+
+        main > section#tblajest {
+            display: inline-block;
+            margin: auto;
+            position: absolute;
+            left: 35%;
+            right: 0;
+            top: 19%;
+            bottom: 0;
+
+
+        }
+
+        main > section#tblajest > section {
+            overflow-x: scroll;
+            width: 90%;
+            height: 80%;
+        }
+
+
+        main > section#tableDetails > div {
+            display: inline-block;
+        }
+
+    </style>
+</head>
+
+<body id="DashBoardAdmin">
+<header class="jumbotron bg-primary text-white p-3">
+    <!--  //logo-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/images%20(5).jpeg" alt="Logo" width="30" height="24"
+                     class="d-inline-block align-text-top">
+                Easy Car Rental Pvt Ltd </a>
+        </div>
+
+        <!--/links-->
+        <div class="container-fluid">
+            <!--            <a class="navbar-brand" href="#">Easy Car Rental Pvt Ltd</a>-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+
+        <div class="container-fluid">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+</header>
+
+<main>
+    <!--////////////////////////////////////////////////////////////////-->
+    <section>
+        <div>
+            <p id="time"></p>
+        </div>
+
+    </section>
+    <!////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////---->
+
+    <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+    <div>
+        <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
+    </div>
+
+    <aside>
+
+        <div style="position: relative">
+            <a href="DriverForm.html" class="btn btn-dark btn-primary btn-lg">Driver Manage</a>
+
+            <br>
+            <br>
+
+            <a href="CustomerForm.html" class="btn btn-dark btn-primary btn-lg">Customer Manage</a>
+
+            <br>
+            <br>
+
+            <button type="button" id="BtnShowOrders" class="btn btn-dark btn-primary btn-lg">Order Details
+            </button>
+            <br>
+            <br>
+            <a href="Car.html" class="btn btn-dark btn-primary btn-lg">Car Details Manage</a>
+
+            <br>
+            <br>
+            <a href="PaymentForm.html" class="btn btn-dark btn-primary btn-lg">Payment Details Manage</a>
+
+            <br>
+            <br>
+            <br>
+            <button type="button" id="BtnShowIncome" class="btn  btn-danger btn-primary btn-lg" >Income
+            </button>
+        </div>
+
+    </aside>
+    <!--model tika-->
+    <section>
+        <section>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                           aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text">We'll never share your email with anyone
+                                        else.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <!--         Button trigger modal-->
+            <!--          <button  style="position: absolute" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">-->
+            <!--            Launch demo modal-->
+            <!--          </button>-->
+
+            <!-- Modal -->
+            <div class="modal fade" id="RegisterNewCustomer" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel2">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="ID" aria-label="ID">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Name" aria-label="Name">
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="ContNo" aria-label="ContNo">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Address" aria-label="Address">
+                                </div>
+
+                            </div>
+                            <br></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+
+            <div class="modal fade" id="Driver" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel3">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <section id="tblajest">
+
+        <div>
+            <button type="button" id="BtnShowCustomer" class="btn btn-success">Customer Details</button>
+            <button type="button" id="BtnShowDriver" class="btn btn-primary">Drivers Details</button>
+            <button type="button" id="BtnShowCar" class="btn btn-danger">Car Details</button>
+            <button type="button" id="BtnShowPayment" class="btn btn-warning">Payment Details</button>
+            <button type="button" id="BtnShowOrdersDetails" class="btn btn-warning">Order Details</button>
+
+        </div>
+
+        <br>
+        <br>
+        <section>
+            <table style="display:none" id="tableDetails"
+                   class="col table table-bordered border-primary table-dark table-striped">
+                <thead>
+                <tr class="table-dark table-striped">
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Password</th>
+                    <th>Nic</th>
+
+                </tr>
+                </thead>
+                <tbody id="tblCustomer">
+
+                </tbody>
+            </table>
+            <table id="tableDriverDetails" style="display:none;width: 95%" border="2px solid red"
+                   class="col table table-bordered border-primary table-dark table-striped">
+                <thead class="bg-danger text-white">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>LicNo</th>
+                    <th>Address</th>
+                    <th>Availability</th>
+                </tr>
+                </thead>
+                <tbody id="tblDriver">
+
+                </tbody>
+            </table>
+            <table style="display:none" id="tablePaymentDetails"
+                   class="col table table-bordered border-primary table-dark table-striped">
+                <thead>
+                <tr class="table-dark table-striped">
+                    <th>User</th>
+                    <th>Type</th>
+                    <th>Version</th>
+                    <th>RentFree</th>
+                    <th>TravelDistance</th>
+                    <th>LossDamage</th>
+                    <th>ExtraKmPrice</th>
+
+
+                </tr>
+                </thead>
+                <tbody id="tblPayment">
+
+                </tbody>
+            </table>
+            <table style="display:none" id="tableCarDetails"
+                   class="col table table-bordered border-primary table-dark table-striped">
+                <thead>
+                <tr class="table-dark table-striped">
+                    <th>carId</th>
+                    <th>Version</th>
+                    <th>Type</th>
+                    <th>Fuel</th>
+                    <th>Transmission</th>
+                    <th>Passengers</th>
+                    <th>Colour</th>
+                    <th>Amount</th>
+                    <th>Rent_duration</th>
+                    <th>Price</th>
+                    <th>Price_ExtraKm</th>
+
+                </tr>
+                </thead>
+                <tbody id="tblCar">
+
+                </tbody>
+            </table>
+            <table style="display:none" id="tableIncomeDetails"
+                   class="col table table-bordered border-primary table-dark table-striped">
+                <thead>
+                <tr class="table-dark table-striped">
+                    <th>oid</th>
+                    <th>customerId</th>
+                    <th>driId</th>
+                    <th>date</th>
+                    <th>receiveDate</th>
+                    <th>totalAll</th>
+
+                </tr>
+                </thead>
+                <tbody id="tblIncome">
+
+                </tbody>
+            </table>
+            <table style="display:none" id="tableOrder"
+                   class="col table table-bordered border-primary table-dark table-striped">
+                <thead>
+                <tr class="table-dark table-striped">
+                    <th>oid</th>
+                    <th>cusID</th>
+                    <th>scheduleId</th>
+                    <th>date</th>
+                </tr>
+                </thead>
+                <tbody id="tblOrder">
+
+                </tbody>
+            </table>
+            <table style="display:none" id="tableOrderDetails"
+                   class="col table table-bordered border-primary table-dark table-striped">
+                <thead>
+                <tr class="table-dark table-striped">
+                    <th>Vehicle</th>
+                    <th>user</th>
+                    <th>carId</th>
+                    <th>scheduleId</th>
+                    <th>Type</th>
+                    <th>Version</th>
+                    <th>Need</th>
+                    <th>Total</th>
+
+                </tr>
+                </thead>
+                <tbody id="tblOrderDetails">
+
+                </tbody>
+            </table>
+        </section>
+
+    </section>
+
+
+</main>
+<script>
+    var timeDisplay = document.getElementById("time");
+
+    function refreshTime() {
+        var dateString = new Date().toLocaleString("en-US", {timeZone: "America/Sao_Paulo"});
+        var formattedString = dateString.replace(", ", " - ");
+        timeDisplay.innerHTML = formattedString;
+    }
+
+    setInterval(refreshTime, 1000);
+</script>
+
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery-3.6.1.min.js"></script>
+<script>
+
+    <!--customer table show-->
+    let baseURL = "http://localhost:8080/";
+
+    $("#BtnShowCustomer").click(function () {
+        $("#tableDriverDetails").css('display', 'none');
+        $("#tableDetails").css('display', 'block');
+        $("#tableCarDetails").css('display', 'none');
+        $("#tablePaymentDetails").css('display', 'none');
+        $("#tableIncomeDetails").css('display', 'none');
+        $("#tableOrder").css('display', 'none');
+        $("#tableOrderDetails").css('display', 'none');
+        getAllCustomer();
+
+    });
+    $("#BtnShowDriver").click(function () {
+        $("#tableDetails").css('display', 'none');
+        $("#tableDriverDetails").css('display', 'block');
+        $("#tableCarDetails").css('display', 'none');
+        $("#tableIncomeDetails").css('display', 'none');
+        $("#tableOrder").css('display', 'none');
+        $("#tableOrderDetails").css('display', 'none');
+        $("#tablePaymentDetails").css('display', 'none');
+        getAllDriver();
+    });
+    $("#BtnShowCar").click(function () {
+        $("#tableDetails").css('display', 'none');
+        $("#tableDriverDetails").css('display', 'none');
+        $("#tableCarDetails").css('display', 'block');
+        $("#tablePaymentDetails").css('display', 'none');
+        $("#tableIncomeDetails").css('display', 'none');
+        $("#tableOrder").css('display', 'none');
+        $("#tableOrderDetails").css('display', 'none');
+        getAllCar();
+    });
+    $("#BtnShowPayment").click(function () {
+        $("#tableDetails").css('display', 'none');
+        $("#tableDriverDetails").css('display', 'none');
+        $("#tableCarDetails").css('display', 'none');
+        $("#tablePaymentDetails").css('display', 'block');
+
+
+        getAllPayment();
+    });
+    $("#BtnShowIncome").click(function () {
+        $("#tableDetails").css('display', 'none');
+        $("#tableDriverDetails").css('display', 'none');
+        $("#tableCarDetails").css('display', 'none');
+        $("#tablePaymentDetails").css('display', 'none');
+        $("#tableIncomeDetails").css('display', 'block');
+        $("#tblIncome").css('display', 'block');
+
+        getAllIncome();
+    });
+    $("#BtnShowOrders").click(function () {
+        $("#tableDetails").css('display', 'none');
+        $("#tableDriverDetails").css('display', 'none');
+        $("#tableCarDetails").css('display', 'none');
+        $("#tablePaymentDetails").css('display', 'none');
+        $("#tableIncomeDetails").css('display', 'none');
+        $("#tableOrder").css('display', 'block');
+        $("#tableOrderDetails").css('display', 'none');
+        getAllOrders();
+    });
+    $("#BtnShowOrdersDetails").click(function () {
+        $("#tableDetails").css('display', 'none');
+        $("#tableDriverDetails").css('display', 'none');
+        $("#tableCarDetails").css('display', 'none');
+        $("#tablePaymentDetails").css('display', 'none');
+        $("#tableIncomeDetails").css('display', 'none');
+        $("#tableOrder").css('display', 'none');
+        $("#tableOrderDetails").css('display', 'block');
+
+
+        getAllOrderDetails();
+    });
+
+
+    function getAllOrderDetails(){
+        $("#tblOrderDetails").empty();
+
+        $.ajax({
+            url: baseURL + "purchaseDetails",
+            dataType: "json",
+            success: function (resp) {
+                for (let cus of resp.data) {
+                    var row =   '<tr><td>' + cus.vehicle +
+                        '</td><td>' + cus.user +
+                        '</td><td>' + cus.carId +
+                        '</td><td>' + cus.scheduleId +
+                        '</td><td>' + cus.type +
+                        '</td><td>' + cus.version +
+                        '</td><td>' + cus.need +
+                        '</td><td>' + cus.total +
+                        '</td></tr>';
+                    $("#tblOrderDetails").append(row);
+                }
+                setTextFieldValues("", "", "", "", "", "", "","","");
+            }
+        });
+    }
+
+    function getAllOrders(){
+        $("#tblOrder").empty();
+
+        $.ajax({
+            url: baseURL + "purchase",
+            dataType: "json",
+            success: function (resp) {
+                for (let cus of resp.data) {
+                    var row =   '<tr><td>' + cus.oid +
+                        '</td><td>' + cus.cusID +
+                        '</td><td>' + cus.scheduleId +
+                        '</td><td>' + cus.date +
+                        '</td></tr>';
+                    $("#tblOrder").append(row);
+                }
+                setTextFieldValues("", "", "", "", "", "", "","","");
+            }
+        });
+    }
+    function getAllIncome(){
+        $("#tblIncome").empty();
+
+        $.ajax({
+            url: baseURL + "Finalize",
+            dataType: "json",
+            success: function (resp) {
+                for (let cus of resp.data) {
+                    var row =   '<tr><td>' + cus.oid +
+                                '</td><td>' + cus.customerId +
+                                '</td><td>' + cus.driId +
+                                '</td><td>' + cus.date +
+                                '</td><td>' + cus.receiveDate +
+                                '</td><td>' + cus.totalAll +
+                                '</td></tr>';
+
+                    $("#tblIncome").append(row);
+                }
+                setTextFieldValues("", "", "", "", "", "", "","","");
+            }
+        });
+    }
+    function getAllCar() {
+        $("#tblCar").empty();
+
+        $.ajax({
+            url: baseURL + "Car",
+            dataType: "json",
+            success: function (resp) {
+                for (let cus of resp.data) {
+                    var row = '<tr><td>' + cus.carId + '</td><td>' + cus.version +
+                        '</td><td>' + cus.type + '</td><td>' +
+                        cus.fuel + '</td><td>' + cus.transmission
+                        + '</td><td>' + cus.passengers
+                        + '</td><td>' + cus.colour
+                        + '</td><td>' + cus.amount + '</td><td>' + cus.rent_duration + '</td><td>'
+                        + cus.price + '</td><td>' + cus.price_ExtraKm + '</td></tr>';
+
+                    $("#tblCar").append(row);
+                }
+                setTextFieldValues("", "", "", "", "", "", "","","");
+            }
+        });
+    }
+    function getAllPayment() {
+        $("#tblPayment").empty();
+
+        $.ajax({
+            url: baseURL + "Payment",
+            dataType: "json",
+            success: function (resp) {
+                for (let cus of resp.data) {
+                    var row = '<tr><td>' + cus.user + '</td><td>' + cus.version +
+                        '</td><td>' + cus.type + '</td><td>' +
+                        cus.travelDistance + '</td><td>' + cus.rentFree
+                        + '</td><td>' + cus.lossDamage
+                        + '</td><td>'+ cus.extraKmPrice + '</td></tr>';
+
+                    $("#tblPayment").append(row);
+                }
+                setTextFieldValues("", "", "", "", "", "", "");
+            }
+        });
+    }
+    function getAllCustomer() {
+        $("#tblCustomer").empty();
+
+        $.ajax({
+            url: baseURL + "Customer",
+            dataType: "json",
+            success: function (resp) {
+                for (let cus of resp.data) {
+                    var row = '<tr><td>' + cus.id + '</td><td>' + cus.name + '</td><td>' + cus.address + '</td><td>' + cus.email + '</td><td>' + cus.cont + '</td><td>' + cus.nic + '</td><td>' + cus.password + '</td></tr>';
+
+                    $("#tblCustomer").append(row);
+                }
+                setTextFieldValues("", "", "", "", "", "", "");
+            }
+        });
+    }
+    function getAllDriver() {
+        $("#tblDriver").empty();
+
+        $.ajax({
+            url: baseURL + "Driver",
+            dataType: "json",
+            success: function (resp) {
+                for (let cus of resp.data) {
+                    console.log("mkd : " + cus.id + cus.name);
+
+                    var row = '<tr><td>' + cus.user + '</td><td>' + cus.name + '</td><td>' + cus.licNo + '</td><td>' + cus.address + '</td><td>' + cus.availability + '</td></tr>';
+                    // console.log(row);
+                    $("#tblDriver").append(row);
+                }
+                // console.log("Add " + row);
+                EventBindingvalue();
+                setTextFieldValues("", "", "", "", "");
+                $("#txtDrierID").focus();
+            }
+
+        });
+    }
+
+</script>
+
+</body>
+</html>
