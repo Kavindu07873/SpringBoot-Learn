@@ -8,8 +8,8 @@ public interface CarService {
 
     public void  UpdateCar(CarDto dto);
     public  void addCar(CarDto dto);
-    public  void  DeleteCar(String id);
+    public  void  deleteCar(int id);
     public ArrayList<CarDto> getAllCar();
 //    public CarDto SearchCarByType(String type);
-
+//    public String findCarNameByType(String type);
     }

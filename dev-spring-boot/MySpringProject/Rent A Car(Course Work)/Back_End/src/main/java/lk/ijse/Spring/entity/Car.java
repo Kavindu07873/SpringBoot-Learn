@@ -1,14 +1,12 @@
 package lk.ijse.Spring.entity;
 
+import lk.ijse.Spring.entity.VehicleType.Type;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,9 +16,15 @@ import javax.persistence.OneToMany;
 public class Car {
 
     @Id
-    private   String carId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Car_Id")
+    private   int carId;
+
     private   String Version;
-    private String Type;
+
+    @Enumerated(EnumType.STRING)
+    private Type type;
+
     private String Fuel;
     private String Passengers;
     private String Transmission;

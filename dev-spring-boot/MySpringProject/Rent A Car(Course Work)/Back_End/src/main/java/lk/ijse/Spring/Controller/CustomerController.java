@@ -2,6 +2,7 @@ package lk.ijse.Spring.Controller;
 
 
 import lk.ijse.Spring.dto.CustomerDto;
+import lk.ijse.Spring.entity.Customer;
 import lk.ijse.Spring.service.CustomerService;
 import lk.ijse.Spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +19,9 @@ public class CustomerController {
     CustomerService customerService;
 
     @PostMapping
-    public ResponseUtil saveCustomer(@ModelAttribute CustomerDto dto){
-
-        customerService.addCustomer(dto);
-        return new ResponseUtil("200",dto.toString()+ " Added",null);
+    public ResponseUtil saveCustomer(CustomerDto theCustomerDto){
+        customerService.addCustomer(theCustomerDto);
+        return new ResponseUtil("200",theCustomerDto.toString()+ " Added",null);
     }
 
     @PutMapping
@@ -33,8 +33,8 @@ public class CustomerController {
     }
 
     @DeleteMapping(params = "id")
-    public ResponseUtil deleteCustomer(String id){
-//        System.out.println(id);
+    public ResponseUtil deleteCustomer(int id){
+        System.out.println(id);
         customerService.deleteCustomer(id);
         return new ResponseUtil("200",id+" Deleted",null);
     }

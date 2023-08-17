@@ -38,14 +38,14 @@ public class PurchaseOrderServiceImpl implements PurchaseOrderService {
 
     @Override
     public void purchaseOrder(OrdersDTO dto) {
-        Orders orders = mapper.map(dto, Orders.class);
-        System.out.println(orders.toString());
-
-        if (ordersRepo.existsById(orders.getOid())) {
-            throw new RuntimeException("Order : " + orders.getOid() + " Already Available.!");
-        }
-
-        ordersRepo.save(orders);
+//        Orders orders = mapper.map(dto, Orders.class);
+//        System.out.println(orders.toString());
+//
+//        if (ordersRepo.existsById(orders.getOid())) {
+//            throw new RuntimeException("Order : " + orders.getOid() + " Already Available.!");
+//        }
+//
+//        ordersRepo.save(orders);
 
     }
 
@@ -67,9 +67,9 @@ public class PurchaseOrderServiceImpl implements PurchaseOrderService {
 //                throw new RuntimeException(orderDetails.getCarId() + ": Item Not Available On the Database.!");
 //            }
 
-            Car car = carRepo.getReferenceById(details.getCarId());
-            car.setAmount(car.getAmount() -orderDetails.getNeed());
-            carRepo.save(car);
+//            Car car = carRepo.getReferenceById(details.getCarId());
+//            car.setAmount(car.getAmount() -orderDetails.getNeed());
+//            carRepo.save(car);
         }
 
 

@@ -63,22 +63,22 @@
                             <h1 class="bg-success p-2 text-black bg-opacity-75">Customer Details</h1>
                             <div class="d-flex justify-content-around">
 
-                                <div class="mb-3">
-                                    <label for="OrderId" class="form-label text-black">OrderID</label>
-                                    <input type="text" class="form-control" name="orderId" aria-label="oid" id="OrderId"
-                                           placeholder="D001">
+<!--                                <div class="mb-3">-->
+<!--                                    <label for="OrderId" class="form-label text-black">OrderID</label>-->
+<!--                                    <input type="text" class="form-control" name="orderId" aria-label="oid" id="OrderId"-->
+<!--                                           placeholder="D001">-->
 
-                                </div>
-                                <div class="mb-3">
-                                    <label for="scheduleId" class="form-label text-black">SheduleId</label>
-                                    <input type="text" class="form-control" name="scheduleId" aria-label="scheduleId"
-                                           id="scheduleId" placeholder="D001">
+<!--                                </div>-->
+<!--                                <div class="mb-3">-->
+<!--                                    <label for="scheduleId" class="form-label text-black">SheduleId</label>-->
+<!--                                    <input type="text" class="form-control" name="scheduleId" aria-label="scheduleId"-->
+<!--                                           id="scheduleId" placeholder="D001">-->
 
-                                </div>
+<!--                                </div>-->
 
                                 <div class="mb-3">
                                     <label for="Date" class="form-label text-black">Date</label>
-                                    <input type="date" class="form-control" id="Date" name="date" aria-label="date">
+                                    <label type="date" class="form-control" id="Date" name="date" aria-label="date">
                                 </div>
                             </div>
 
@@ -86,7 +86,7 @@
 
                                 <div class="mb-3">
                                     <div class="form-group">
-                                        <label>Customer :</label>
+                                        <label for="selectCusID" class="form-label text-black">Customer</label>
                                         <select class="form-control" id="selectCusID">
                                         </select>
                                         <span class="control-error"
@@ -94,10 +94,10 @@
                                     </div>
                                 </div>
 
-                                <div class="mb-3">
-                                    <label for="CusId" class="form-label text-black">Cus Id</label>
-                                    <input type="text" class="form-control" id="CusId" name="cusId" aria-label="cusID">
-                                </div>
+<!--                                <div class="mb-3">-->
+<!--                                    <label for="CusId" class="form-label text-black">Cus Id</label>-->
+<!--                                    <input type="text" class="form-control" id="CusId" name="cusId" aria-label="cusID">-->
+<!--                                </div>-->
 
                                 <div class="mb-3">
                                     <label for="CusName" class="form-label text-black">CustomerName</label>
@@ -353,7 +353,7 @@
 <script src="assets/js/bootstrap.min.js"></script>
 <script>
 
-    let baseURL = "http://localhost:8080/Back_End_war/";
+    let baseURL = "http://localhost:8080/";
     getAllCustomer();
     getAllCar();
     searchCar();
@@ -384,7 +384,10 @@
             dataType: "json",
             async: false,
             success: function (resp) {
+                console.log(cusID)
                 response = resp.data.filter((c) => {
+                    console.log(c.Id)
+
                     return c.id == cusID;
                 });
             }
@@ -392,6 +395,8 @@
         console.log(response);
         return response;
     }
+
+
 
     $("#selectCusID").change(function () {
         let cusID = $("#selectCusID").val();
@@ -504,6 +509,17 @@
         }
 
     });
+
+
+
+
+
+
+
+
+
+
+
 
     function getAllDriver() {
         $("#selectDriID").empty();

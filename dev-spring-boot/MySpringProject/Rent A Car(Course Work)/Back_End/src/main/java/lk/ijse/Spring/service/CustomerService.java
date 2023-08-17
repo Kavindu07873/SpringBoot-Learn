@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public interface CustomerService {
     public  void addCustomer(CustomerDto dto);
     public void UpdateCustomer(CustomerDto dto);
-    public void deleteCustomer(String id);
+    public void deleteCustomer(int id);
     public ArrayList<CustomerDto> getAllCustomers();
 
 //    CustomerDto searchCustomerByName(String Name);

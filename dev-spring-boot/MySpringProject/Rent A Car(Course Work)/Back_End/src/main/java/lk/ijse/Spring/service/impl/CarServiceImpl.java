@@ -31,17 +31,17 @@ public class CarServiceImpl implements CarService {
         CarRepo.save(car);
 
     }
-
+    @Override
     public void addCar(CarDto dto) {
-        if (CarRepo.existsById(dto.getCarId())) {
-            throw new RuntimeException("Customer id  " + dto.getCarId() + "  AlReady  exit");
-        }
+//        if (CarRepo.existsById(dto.getCarId())) {
+//            throw new RuntimeException("Customer id  " + dto.getCarId() + "  AlReady  exit");
+//        }
         Car car = mapper.map(dto, Car.class);
         CarRepo.save(car);
     }
-
-    public void DeleteCar(String id) {
-        CarRepo.deleteAllById(Collections.singleton(id));
+    @Override
+    public void deleteCar(int id) {
+        CarRepo.deleteById(id);
     }
 
 
@@ -57,4 +57,7 @@ public class CarServiceImpl implements CarService {
 //    }
 //
 
+//    public String findCarNameByType(String type) {
+//        return CarRepo.findCarNameByType(type);
+//    }
 }

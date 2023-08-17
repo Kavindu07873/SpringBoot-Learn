@@ -15,17 +15,15 @@ import java.util.List;
 public class Orders {
 
     @Id
-    private String oid;
-    //Out=verse
-    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "customerID",referencedColumnName = "Id",nullable = false)
-    private Customer cusID;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int oid;
 
-
-    private String scheduleId;
+    private String cusID;
 
     private LocalDate date;
 
+    @OneToMany(mappedBy = "orders", cascade = {CascadeType.PERSIST ,CascadeType.MERGE , CascadeType.DETACH ,CascadeType.REFRESH})
+    private List<OrderDetails> orderDetails;
 //
 //    //Inverse
 //    @OneToMany(mappedBy = "orders",cascade = CascadeType.ALL)

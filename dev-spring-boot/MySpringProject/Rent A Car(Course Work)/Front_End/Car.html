@@ -96,13 +96,19 @@
 <!--                           name="cId"-->
 <!--                           aria-label="cId" required>-->
 <!--                </div>-->
+<!--                <div class="col">-->
+<!--                    <label for="txtUser">Car_Id</label>-->
+<!--                    <input type="text" class="form-control is-invalid" id="txtUser" placeholder=""-->
+<!--                           name="carId"-->
+<!--                           aria-label="carId" required>-->
+<!--                </div>-->
                 <div class="col">
-                    <label for="txtUser">Car_Id</label>
-                    <input type="text" class="form-control is-invalid" id="txtUser" placeholder=""
-                           name="carId"
-                           aria-label="carId" required>
+                    <label for="lblUserID">Customer ID</label>
+                    <!--                    <input type="text" id="txtCustomerID" class="form-control d-inline-block is-invalid"  placeholder="C001"-->
+                    <!--                           name="id"-->
+                    <!--                           aria-label="ID" required>-->
+                    <label type="text" id="lblUserID" class="form-control d-inline-block "  placeholder="C001"></label>
                 </div>
-
                 <div class="col">
                     <label for="txtVersion">Version</label>
                     <input type="text" class="form-control is-invalid" id="txtVersion" placeholder=""
@@ -110,11 +116,24 @@
                            aria-label="version" required>
                 </div>
                 <div class="col">
+<!--                    <label for="txtType">Type</label>-->
+<!--                    <input type="text" class="form-control is-invalid" id="txtType" placeholder=""-->
+<!--                           name="type"-->
+<!--                           aria-label="type" required>-->
+<!--                -->
                     <label for="txtType">Type</label>
-                    <input type="text" class="form-control is-invalid" id="txtType" placeholder=""
-                           name="type"
-                           aria-label="type" required>
+                    <select type="text" class="form-control is-invalid" id="txtType"  name="type" >
+                        <option ></option>
+                        <option >GENERAL</option>
+                        <option >PREMIUM</option>
+                        <option >LUXURY</option>
+                    </select>
+
                 </div>
+
+
+
+
                 <div class="col">
                     <label for="txtFuel">Fuel_type</label>
                     <input type="text" id="txtFuel" class="is-invalid form-control d-inline-block"
@@ -265,7 +284,7 @@
 
     //update value
     $("#BtnUpdate").click(function () {
-        let car =$("#txtUser").val();
+        let car =$("#lblUserID").text();
         let Version =$("#txtVersion").val();
         let Type =$("#txtType").val();
         let Fuel =$("#txtFuel").val();
@@ -318,7 +337,7 @@
     //Delete Value
     $("#BtnDelete").click(function () {
 
-        let id = $("#txtUser").val();
+        let id = $("#lblUserID").text();
         $.ajax({
             url: baseURL + "Car?id=" + id + "",
             method: "delete",
@@ -369,7 +388,7 @@
 
 
     function setTextFieldValues(carId,Version,Type,Fuel,Passengers,Transmission,Colour,Rent_duration,Amount,Price,Price_ExtraKm) {
-        $("#txtUser").val(carId);
+        $("#lblUserID").text(carId);
         $("#txtVersion").val(Version);
         $("#txtType").val(Type);
         $("#txtFuel").val(Fuel);
@@ -401,7 +420,7 @@
 
 
             //  tble eke textfild walata data add karanawa
-            $("#txtUser").val(carId);
+            $("#lblUserID").text(carId);
             $("#txtVersion").val(Version);
             $("#txtType").val(Type);
             $("#txtFuel").val(Fuel);

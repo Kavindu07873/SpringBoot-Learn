@@ -17,6 +17,10 @@ import java.math.BigDecimal;
 public class OrderDetails {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int Id;
+
+
     private String Vehicle;
     private String user;
     private String carId;
@@ -26,6 +30,9 @@ public class OrderDetails {
     private int Need;
     private double Total;
 
+    @ManyToOne(cascade = {CascadeType.PERSIST ,CascadeType.MERGE , CascadeType.DETACH ,CascadeType.REFRESH})
+    @JoinColumn(name = "order_oid")
+    private Orders orders;
 
 //    @ManyToOne
 //    @JoinColumn(name = "oid",referencedColumnName = "oid",insertable = false,updatable = false)

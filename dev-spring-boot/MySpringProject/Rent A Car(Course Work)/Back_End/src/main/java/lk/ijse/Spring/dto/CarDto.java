@@ -10,7 +10,7 @@ import lombok.ToString;
 @Data
 @ToString
 public class CarDto {
-    private   String carId;
+    private   int carId;
     private   String Version;
     private String Type;
     private String Fuel;

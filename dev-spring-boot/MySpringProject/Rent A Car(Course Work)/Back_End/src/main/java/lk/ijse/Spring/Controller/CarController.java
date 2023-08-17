@@ -34,9 +34,9 @@ public class CarController {
     }
 
     @DeleteMapping(params = "id")
-    public ResponseUtil deleteCar(String id){
-    carService.DeleteCar(id);
-
+    public ResponseUtil deleteCar(int id){
+        System.out.println(id);
+    carService.deleteCar(id);
         return new ResponseUtil("200",id+" Deleted",null);
     }
 
@@ -53,4 +53,10 @@ public class CarController {
 //        CarDto carDto = carService.SearchCarByType(type);
 //        return  new ResponseUtil("200","Success.!",carDto);
 //    }
+
+//    @GetMapping("/type")
+//    public String getCarNameByType(@RequestParam String type) {
+//        return carService.findCarNameByType(type);
+//    }
+
 }

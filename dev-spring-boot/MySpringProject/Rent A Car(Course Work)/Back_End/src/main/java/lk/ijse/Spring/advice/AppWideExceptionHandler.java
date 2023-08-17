@@ -17,5 +17,34 @@ public class AppWideExceptionHandler {
         return new ResponseUtil("500",e.getMessage(),null);
     }
 
+//
+//    @ExceptionHandler
+//    public ResponseEntity<StudentErrorResponse> handleException(StudentNotFoundException exc){
+//
+////    create a StudentErrorResponse
+//        StudentErrorResponse errorResponse = new StudentErrorResponse();
+//
+//        errorResponse.setStatus(HttpStatus.NOT_FOUND.value());
+//        errorResponse.setMessage(exc.getMessage());
+//        errorResponse.setTimestamp(System.currentTimeMillis());
+//// return ResponseEntity
+//        return new  ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+//    }
+//    // add another exception  handler  to catech any exception (Catch All)
+//    @ExceptionHandler
+//    public ResponseEntity<StudentErrorResponse> handleException(Exception excs){
+//
+////    create a StudentErrorResponse
+//        StudentErrorResponse errorResponse = new StudentErrorResponse();
+//
+//        errorResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+//        errorResponse.setMessage(excs.getMessage());
+//        errorResponse.setTimestamp(System.currentTimeMillis());
+//
+//
+//// return ResponseEntity
+//        return new  ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+//
+//    }
 
 }

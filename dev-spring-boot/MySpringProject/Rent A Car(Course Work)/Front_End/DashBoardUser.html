@@ -91,7 +91,7 @@
 
         main > section:nth-child(2) {
             position: relative;
-            height: 2172px;
+            /*height: 2172px;*/
             border: 2px solid black;
         }
 
@@ -171,7 +171,7 @@
             z-index: 6;
         }
 
-        #placeOrder {
+        #placeOrders {
             position: fixed;
             background: #0c0c0c;
             width: 250px;
@@ -184,7 +184,7 @@
             z-index: 9;
         }
 
-        #placeOrder > button {
+        #placeOrders > button {
             border-radius: 50px;
             width: 200px;
             height: 70px;
@@ -221,7 +221,7 @@
 <header class="jumbotron bg-primary text-white p-3">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="DashBoardUser.html">
                 <img src="assets/img/images%20(5).jpeg" alt="Logo" width="30" height="24"
                      class="d-inline-block align-text-top">
                 Easy Car Rental Pvt Ltd </a>
@@ -233,9 +233,9 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-                <button class="btn btn-outline-warning" type="submit">Car</button>
-                <button class="btn btn-outline-warning" type="submit">Driver</button>
-                <button class="btn btn-outline-warning" type="submit">Payment</button>
+<!--                <button class="btn btn-outline-warning" type="submit" id="HomePage">Car</button>-->
+<!--                <button class="btn btn-outline-warning" type="submit">Driver</button>-->
+                <button class="btn btn-outline-warning" type="submit"  id="OrderSetPage">Order</button>
 
 
             </button>
@@ -270,652 +270,837 @@
 
 
 
-<main>
-    <div class="modal fade" id="exampleModalc" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-body">
-                    <form id="loginFormCustomer">
-                        <div class="mb-3">
-                            <label for="exampleInputEmail" class="form-label">User</label>
-                            <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1c" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1c">
-                        </div>
-                        <div class="mb-3 form-check">
-                            <label for="exampleInputPassword1c" class="form-label">If You are Not Register</label>
-                            <label for="exampleInputPassword1c" class="form-label">Please Register</label>
-
-                        </div>
-                        <button id="SingInCustomerlogin"  type="button" class="btn btn-primary">Submit</button>
-
-                        <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-                                aria-controls="offcanvasWithBothOptions" type="button"
-                                class="btn btn-outline-warning btn-lg">Register
-                        </button>
-
-                    </form>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="exampleModalc2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-body">
-                    <form id="loginFormCustomer2">
-                        <div class="mb-3">
-                            <label for="exampleInputEmail" class="form-label">UserId</label>
-                            <input type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1c" class="form-label">licNo</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1c2">
-                        </div>
-                        <div class="mb-3 form-check">
-                            <label for="exampleInputPassword1c" class="form-label">Only Drivers Can</label>
-                            <label for="exampleInputPassword1c" class="form-label">Access</label>
-                            <label for="exampleInputPassword1c" class="form-label" id="oks"></label>
-
-                        </div>
-                        <button id="SingInCustomerlogin2"  type="button" class="btn btn-primary">Submit</button>
-
-
-                    </form>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <br>
-
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
-         aria-labelledby="offcanvasWithBothOptionsLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Register New Customer</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <form id="customerForm" class="was-validated">
-
-                <!--                <div class="row">-->
-                <div class="col">
-                    <label for="txtCustomerID">Customer ID</label>
-                    <input type="text" id="txtCustomerID" class="form-control d-inline-block is-invalid"
-                           placeholder="C001"
-                           name="id"
-                           aria-label="ID" required>
-                </div>
-                <div class="col">
-                    <label for="txtCustomerName">Customer Name</label>
-                    <input type="text" class="form-control is-invalid" id="txtCustomerName" placeholder="20000.00"
-                           name="name"
-                           aria-label="Name" required>
-                </div>
-                <div class="col">
-                    <label for="txtCustomerAddress">Customer Address</label>
-                    <input type="text" id="txtCustomerAddress" class="is-invalid form-control d-inline-block"
-                           placeholder="yapagewaththa"
-                           name="address" aria-label="Address" required>
-                </div>
-                <div class="col">
-                    <label for="txtCustomerEmail">Customer Email</label>
-                    <input type="text" class="form-control is-invalid" id="txtCustomerEmail" placeholder="Galle"
-                           name="email"
-                           aria-label="Email" required>
-                </div>
-                <!--                </div>-->
-
-                <div class="col">
-                    <label for="txtCustomerCon">Customer ConNo</label>
-                    <input type="text" class="is-invalid form-control" id="txtCustomerCon" placeholder="+9411111111"
-                           name="conNo"
-                           aria-label="ConNo" required>
-                </div>
-
-                <div class="col">
-                    <label for="txtCustomerNic">Customer Nic</label>
-                    <input type="text" class="is-invalid form-control" id="txtCustomerNic" placeholder="20000.00"
-                           name="nic"
-                           aria-label="Nic" required>
-                </div>
-                <div class="col">
-                    <label for="txtCustomerPassword">Customer Password</label>
-                    <input type="text" id="txtCustomerPassword" class="is-invalid form-control"
-                           placeholder="+940771530632"
-                           name="password" aria-label="Password" required>
-                </div>
-                <br>
-                <br>
-                <button id="SaveCustomer" type="button" class="btn btn-danger btn-lg">Save Customer</button>
-            </form>
-
-
-        </div>
-    </div>
-
-    <div class="modal fade" id="exampleModal22" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-body">
-                    <form id="login-form">
-                        <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
-                        <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
-                        <input type="submit" value="Login" id="login-form-submit">
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <br>
-    <br>
-
-    <div id="availability" class="container text-center">
-        <div class="row">
-            <div class="col">
-                <h2>Available Car</h2>
-                <label id="lblCarTypeAvailable">Car</label>
-                <label id="lblCarVersionAvailable">Car</label>
-                <label id="lblCarAmountAvailable">Car</label>
-            </div>
-            <div class="col">
-                <h2>Available Driver</h2>
-
-                                <label id="lblDriverIdAvailable">Car</label>
-                                <label id="lblDriverorderAvailable">Car</label>
-                                <label id="lblCarAmountAvailable2">Car</label>
-            </div>
-        </div>
-    </div>
-
-    <div id="placeOrder">
-
-        <button class="btn btn-danger" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModalc">
-            Place
-            Order
-        </button>
-
-
-
-    </div>
-
-    <aside id="para">
-        <blockquote class="blockquote">
-            <h1> WELCOME TO
-                Easy RENT-A-CAR
-            </h1>
-            <p style="">
-                PREMIER CAR RENTAL SERVICES IN SRI LANKA
-                With over 30 years of experience in the industry,
-                we strive to offer the highest levels of customer service and a highly personalised service to
-                all our
-                customers who are on the lookout for Sri Lanka car rental opportunities.
-                With one of the largest and most modern and varied fleets in Sri Lanka,
-                our service is backed by a networked front office,
-                fully-fledged mechanical servicing and valet servicing onsite.
-            </p>
-        </blockquote>
-
-    </aside>
-
-    <aside>
-        <section id="tblajest">
-
-            <div>
-                <button type="button" id="BtnShowCustomer" class="btn btn-success">Customer Details</button>
-                <button type="button" id="BtnShowDriver" class="btn btn-primary">Drivers Details</button>
-                <button type="button" id="BtnShowCar" class="btn btn-danger">Car Details</button>
-                <button type="button" id="BtnShowPayment" class="btn btn-warning">Payment Details</button>
-                <button type="button" id="BtnShowDriverSchedule"  data-bs-toggle="modal" data-bs-target="#exampleModalc2" class="btn btn-success">Driver Shedule</button>
-<!--                <button  data-bs-toggle="modal"-->
-<!--                        data-bs-target="#exampleModalc">-->
-<!--                    Customer Login-->
-<!--                </button>-->
-
-            </div>
-
-            <br>
-            <br>
-            <section>
-                <table style="display:none" id="tableDriverDetailsShedule"
-                       class="col table table-bordered border-primary table-dark table-striped">
-                    <thead>
-                    <tr class="table-dark table-striped">
-                        <th>oid</th>
-                        <th>user</th>
-                        <th>name</th>
-                        <th>date</th>
-                    </tr>
-                    </thead>
-                    <tbody id="tblDriverDetails">
-
-                    </tbody>
-                </table>
-
-                <table style="display:none" id="tablePaymentDetails"
-                       class="col table table-bordered border-primary table-dark table-striped">
-                    <thead>
-                    <tr class="table-dark table-striped">
-                        <th>User</th>
-                        <th>Type</th>
-                        <th>Version</th>
-                        <th>RentFree</th>
-                        <th>TravelDistance</th>
-                        <th>LossDamage</th>
-                        <th>ExtraKmPrice</th>
-
-
-                    </tr>
-                    </thead>
-                    <tbody id="tblPayment">
-
-                    </tbody>
-                </table>
-                <table style="display:none" id="tableCarDetails"
-                       class="col table table-bordered border-primary table-dark table-striped">
-                    <thead>
-                    <tr class="table-dark table-striped">
-                        <th>carId</th>
-                        <th>Version</th>
-                        <th>Type</th>
-                        <th>Fuel</th>
-                        <th>Transmission</th>
-                        <th>Passengers</th>
-                        <th>Colour</th>
-                        <th>Amount</th>
-                        <th>Rent_duration</th>
-                        <th>Price</th>
-                        <th>Price_ExtraKm</th>
-
-                    </tr>
-                    </thead>
-                    <tbody id="tblCar">
-
-                    </tbody>
-                </table>
-                <table style="display:none" id="tableDetails"
-                       class="col table table-bordered border-primary table-dark table-striped">
-                    <thead>
-                    <tr class="table-dark table-striped">
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Address</th>
-                        <th>Email</th>
-                        <th>Contact</th>
-                        <th>Password</th>
-                        <th>Nic</th>
-
-                    </tr>
-                    </thead>
-                    <tbody id="tblCustomer">
-
-                    </tbody>
-                </table>
-                <table id="tableDriverDetails" style="display:none;width: 95%" border="2px solid red"
-                       class="col table table-bordered border-primary table-dark table-striped">
-                    <thead class="bg-danger text-white">
-                    <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>LicNo</th>
-                        <th>Address</th>
-                        <th>Availability</th>
-                    </tr>
-                    </thead>
-                    <tbody id="tblDriver">
-
-                    </tbody>
-                </table>
-
-            </section>
-
-        </section>
-    </aside>
-
-    <div>
-        <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
-        <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
-        <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
-        <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
-
-    </div>
-    <section>
-
-        <section>
-            <h1><p><strong>General Car </strong></p></h1>
-
-            <div class="container text-center">
-            </div>
-            <div>
-
-                <div class="row" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="col-md-4">
-                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="assets/img/Cars/18.jpg" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/img/Cars/35.jpg" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/img/Cars/36.jpg" class="d-block w-100" alt="...">
-                                </div>
-
-                            </div>
-
-                            <h1>Alto_Auto</h1>
-                        </div>
-
-                    </div>
-                    <div class="col-md-4">
-                        <div id="carouselExampleSlidesOnly1" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="assets/img/Cars/alto-k10-exterior-right-front-three-quarter-57.webp"
-                                         class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/img/Cars/alto-k10-exterior-right-rear-three-quarter.webp"
-                                         class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/img/Cars/alto-k10-interior-dashboard.webp"
-                                         class="d-block w-100"
-                                         alt="...">
-                                </div>
-
-                            </div>
-                            <h1>Alto Manuel</h1>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div>
-                            <div id="carouselExampleSlidesOnly3" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="assets/img/Cars/celerio-exterior-rear-view.webp"
-                                             class="d-block w-100"
-                                             alt="...">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/img/Cars/celerio-exterior-left-rear-three-quarter.webp"
-                                             class="d-block w-100" alt="...">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/img/Cars/celerio-exterior-right-side-view.webp"
-                                             class="d-block w-100" alt="...">
-                                    </div>
-
-                                </div>
-                                <h1>Celerio Auto</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="col-md-4">
-                        <div>
-                            <div id="carouselExampleSlidesOnly4" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="assets/img/Cars/Perodua_Axia_2014_360_720_50-23.jpg"
-                                             class="d-block w-100"
-                                             alt="...">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/img/Cars/Perodua_Axia_2014_360_720_50-30.jpg"
-                                             class="d-block w-100"
-                                             alt="...">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/img/Cars/Perodua_Axia_2014_360_720_50-47.jpg"
-                                             class="d-block w-100"
-                                             alt="...">
-                                    </div>
-
-                                </div>
-                                <h1>Perodua-Axia-Auto</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div>
-                            <div id="carouselExampleSlidesOnly5" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="assets/img/Cars/aqua.jpeg" class="d-block w-100" alt="...">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/img/Cars/images.jpeg" class="d-block w-100" alt="...">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="assets/img/Cars/images%20(1).jpeg" class="d-block w-100"
-                                             alt="...">
-                                    </div>
-
-                                </div>
-                                <h1>Prius_Aqua_Auto</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section>
-            <h1><p><strong>Premium Car </strong></p></h1>
-
-            <div class="container text-center">
-                <div class="row" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                    <div class="col-md-4">
-                        <div id="carouselExampleSlidesOnly6" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="assets/img/Cars/download.jpeg" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/img/Cars/download%20(1).jpeg" class="d-block w-100"
-                                         alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/img/Cars/11.jpeg" class="d-block w-100" alt="...">
-                                </div>
-
-                            </div>
-                            <h1>Corolla_axio</h1>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div id="carouselExampleSlidesOnly7" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="assets/img/images%20(1).jpeg" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/img/Cars/images%20(2).jpeg" class="d-block w-100"
-                                         alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/img/Cars/png-transparent-perodua-bezza-car-perodua-myvi-perodua-axia-car-compact-car-sedan-car.png"
-                                         class="d-block w-100" alt="...">
-                                </div>
-
-                            </div>
-                            <h1>Perodua Bezza Prime Sedan</h1>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div id="carouselExampleSlidesOnly8" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="assets/img/Cars/download%20(2).jpeg" class="d-block w-100"
-                                         alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/img/Cars/download%20(3).jpeg" class="d-block w-100"
-                                         alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/img/Cars/download%20(4).jpeg" class="d-block w-100"
-                                         alt="...">
-                                </div>
-
-                            </div>
-                            <h1>Toyota Allion NZT 260</h1>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div id="carouselExampleSlidesOnly9" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="assets/img/Cars/download.jpeg" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/img/Cars/download%20(1).jpeg" class="d-block w-100"
-                                         alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/img/Cars/11.jpeg" class="d-block w-100" alt="...">
-                                </div>
-
-                            </div>
-                            <h1>Toyota Axio NKR 165</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section>
-            <h1><p><strong>Luxury Car </strong></p></h1>
-
-            <div class="container text-center">
-                <div class="row" data-bs-toggle="modal" data-bs-target="#exampleModal3">
-                    <div class="col-md-4">
-                        <div id="carouselExampleSlidesOnly10" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="assets/img/Cars/download.jpeg" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/img/Cars/download%20(1).jpeg" class="d-block w-100"
-                                         alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/img/Cars/11.jpeg" class="d-block w-100" alt="...">
-                                </div>
-
-                            </div>
-                            <h1>Toyota_Premio</h1>
-                            <h1>Luxury Car Available</h1>
-
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div id="carouselExampleSlidesOnly11" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="assets/img/Cars/beaimages.jpeg" class="d-block w-100" alt="...">
-
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/img/Cars/benimages.jpeg" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/img/Cars/2017-C-CabrioCarSlide.gif" class="d-block w-100"
-                                         alt="...">
-                                </div>
-                            </div>
-                            <h1>Mercedes</h1>
-                            <h1>Luxury Car Available</h1>
-
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div id="carouselExampleSlidesOnly12" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="assets/img/Cars/i8download%20(3).jpeg" class="d-block w-100"
-                                         alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/img/Cars/188images.jpeg" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/img/Cars/12download%20(3).jpeg" class="d-block w-100"
-                                         alt="...">
-                                </div>
-
-                            </div>
-                            <h1>BMW i8</h1>
-                            <h1>Luxury Car Available</h1>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-             aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        genaral
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        </div>
-        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel2">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        premium
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel3">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        luxry
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-
-    </section>
+<main id="HomePage" style="display:block">
+       <div class="modal fade" id="exampleModalc" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+           <div class="modal-dialog">
+               <div class="modal-content">
+
+                   <div class="modal-body">
+                       <form id="loginFormCustomer">
+                           <div class="mb-3">
+                               <label for="exampleInputEmail" class="form-label">User</label>
+                               <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+                           </div>
+                           <div class="mb-3">
+                               <label for="exampleInputPassword1c" class="form-label">Password</label>
+                               <input type="password" class="form-control" id="exampleInputPassword1c">
+                           </div>
+                           <div class="mb-3 form-check">
+                               <label for="exampleInputPassword1c" class="form-label">If You are Not Register</label>
+                               <label for="exampleInputPassword1c" class="form-label">Please Register</label>
+
+                           </div>
+                           <button id="SingInCustomerlogin"  type="button" class="btn btn-primary">Submit</button>
+
+                           <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                                   aria-controls="offcanvasWithBothOptions" type="button"
+                                   class="btn btn-outline-warning btn-lg">Register
+                           </button>
+
+                       </form>
+
+                   </div>
+
+               </div>
+           </div>
+       </div>
+<!--       <div class="modal fade" id="exampleModalc2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--           <div class="modal-dialog">-->
+<!--               <div class="modal-content">-->
+
+<!--                   <div class="modal-body">-->
+<!--                       <form id="loginFormCustomer2">-->
+<!--                           <div class="mb-3">-->
+<!--                               <label for="exampleInputEmail" class="form-label">UserId</label>-->
+<!--                               <input type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">-->
+<!--                           </div>-->
+<!--                           <div class="mb-3">-->
+<!--                               <label for="exampleInputPassword1c" class="form-label">licNo</label>-->
+<!--                               <input type="text" class="form-control" id="exampleInputPassword1c2">-->
+<!--                           </div>-->
+<!--                           <div class="mb-3 form-check">-->
+<!--                               <label for="exampleInputPassword1c" class="form-label">Only Drivers Can</label>-->
+<!--                               <label for="exampleInputPassword1c" class="form-label">Access</label>-->
+<!--                               <label for="exampleInputPassword1c" class="form-label" id="oks"></label>-->
+
+<!--                           </div>-->
+<!--                           <button id="SingInCustomerlogin2"  type="button" class="btn btn-primary">Submit</button>-->
+
+
+<!--                       </form>-->
+
+<!--                   </div>-->
+
+<!--               </div>-->
+<!--           </div>-->
+<!--       </div>-->
+
+       <br>
+
+       <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel">
+           <div class="offcanvas-header">
+               <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Register New Customer</h5>
+               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+           </div>
+           <div class="offcanvas-body">
+               <form id="customerForm" class="was-validated">
+
+                   <!--                <div class="row">-->
+
+                   <div class="col">
+                       <label for="txtCustomerName">Customer Name</label>
+                       <input type="text" class="form-control is-invalid" id="txtCustomerName" placeholder="20000.00"
+                              name="name"
+                              aria-label="Name" required>
+                   </div>
+                   <div class="col">
+                       <label for="txtCustomerAddress">Customer Address</label>
+                       <input type="text" id="txtCustomerAddress" class="is-invalid form-control d-inline-block"
+                              placeholder="yapagewaththa"
+                              name="address" aria-label="Address" required>
+                   </div>
+                   <div class="col">
+                       <label for="txtCustomerEmail">Customer Email</label>
+                       <input type="text" class="form-control is-invalid" id="txtCustomerEmail" placeholder="Galle"
+                              name="email"
+                              aria-label="Email" required>
+                   </div>
+                   <!--                </div>-->
+
+                   <div class="col">
+                       <label for="txtCustomerCon">Customer ConNo</label>
+                       <input type="text" class="is-invalid form-control" id="txtCustomerCon" placeholder="+9411111111"
+                              name="conNo"
+                              aria-label="ConNo" required>
+                   </div>
+
+                   <div class="col">
+                       <label for="txtCustomerNic">Customer Nic</label>
+                       <input type="text" class="is-invalid form-control" id="txtCustomerNic" placeholder="20000.00"
+                              name="nic"
+                              aria-label="Nic" required>
+                   </div>
+                   <div class="col">
+                       <label for="txtCustomerPassword">Customer Password</label>
+                       <input type="text" id="txtCustomerPassword" class="is-invalid form-control"
+                              placeholder="+940771530632"
+                              name="password" aria-label="Password" required>
+                   </div>
+                   <br>
+                   <br>
+                   <button id="SaveCustomer" type="button" class="btn btn-danger btn-lg">Save Customer</button>
+               </form>
+
+
+           </div>
+       </div>
+
+       <div class="modal fade" id="exampleModal22" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+           <div class="modal-dialog">
+               <div class="modal-content">
+
+                   <div class="modal-body">
+                       <form id="login-form">
+                           <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
+                           <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+                           <input type="submit" value="Login" id="login-form-submit">
+                       </form>
+                   </div>
+
+               </div>
+           </div>
+       </div>
+       <br>
+       <br>
+
+       <div id="availability" class="container text-center">
+           <div class="row">
+               <div class="col">
+                   <h2>Available Car</h2>
+                   <label id="lblCarTypeAvailable">Car</label>
+                   <label id="lblCarVersionAvailable">Car</label>
+                   <label id="lblCarAmountAvailable">Car</label>
+               </div>
+               <div class="col">
+                   <h2>Available Driver</h2>
+
+                   <label id="lblDriverIdAvailable">Car</label>
+                   <label id="lblDriverorderAvailable">Car</label>
+                   <label id="lblCarAmountAvailable2">Car</label>
+               </div>
+           </div>
+       </div>
+
+       <div id="placeOrders" style="display:none">
+<!--data-bs-toggle="modal" data-bs-target="#exampleModalc"-->
+           <button class="btn btn-danger" type="button" id="placeOrdersButton" >
+               Place
+               Order
+           </button>
+
+
+
+       </div>
+
+       <aside id="para">
+           <blockquote class="blockquote">
+               <h1> WELCOME TO
+                   Easy RENT-A-CAR
+               </h1>
+               <p style="">
+                   PREMIER CAR RENTAL SERVICES IN SRI LANKA
+                   With over 30 years of experience in the industry,
+                   we strive to offer the highest levels of customer service and a highly personalised service to
+                   all our
+                   customers who are on the lookout for Sri Lanka car rental opportunities.
+                   With one of the largest and most modern and varied fleets in Sri Lanka,
+                   our service is backed by a networked front office,
+                   fully-fledged mechanical servicing and valet servicing onsite.
+               </p>
+               <h1>
+                   If You Want To Place Order Please Log In
+               </h1>
+           </blockquote>
+
+       </aside>
+
+
+
+       <div>
+           <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
+           <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
+           <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
+           <img src="assets/img/5-50298_hd-wallpaper-download-bmw-cars-wallpaper-hd-for.jpg">
+
+       </div>
+       <section>
+
+           <section>
+               <h1><p><strong>General Car </strong></p></h1>
+
+               <div class="container text-center">
+               </div>
+               <div>
+
+                   <div class="row" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                       <div class="col-md-4">
+                           <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                               <div class="carousel-inner">
+                                   <div class="carousel-item active">
+                                       <img src="assets/img/Cars/18.jpg" class="d-block w-100" alt="...">
+                                   </div>
+                                   <div class="carousel-item">
+                                       <img src="assets/img/Cars/35.jpg" class="d-block w-100" alt="...">
+                                   </div>
+                                   <div class="carousel-item">
+                                       <img src="assets/img/Cars/36.jpg" class="d-block w-100" alt="...">
+                                   </div>
+
+                               </div>
+
+                               <h1>Alto_Auto</h1>
+                           </div>
+
+                       </div>
+                       <div class="col-md-4">
+                           <div id="carouselExampleSlidesOnly1" class="carousel slide" data-bs-ride="carousel">
+                               <div class="carousel-inner">
+                                   <div class="carousel-item active">
+                                       <img src="assets/img/Cars/alto-k10-exterior-right-front-three-quarter-57.webp"
+                                            class="d-block w-100" alt="...">
+                                   </div>
+                                   <div class="carousel-item">
+                                       <img src="assets/img/Cars/alto-k10-exterior-right-rear-three-quarter.webp"
+                                            class="d-block w-100" alt="...">
+                                   </div>
+                                   <div class="carousel-item">
+                                       <img src="assets/img/Cars/alto-k10-interior-dashboard.webp"
+                                            class="d-block w-100"
+                                            alt="...">
+                                   </div>
+
+                               </div>
+                               <h1>Alto Manuel</h1>
+                           </div>
+                       </div>
+
+                       <div class="col-md-4">
+                           <div>
+                               <div id="carouselExampleSlidesOnly3" class="carousel slide" data-bs-ride="carousel">
+                                   <div class="carousel-inner">
+                                       <div class="carousel-item active">
+                                           <img src="assets/img/Cars/celerio-exterior-rear-view.webp"
+                                                class="d-block w-100"
+                                                alt="...">
+                                       </div>
+                                       <div class="carousel-item">
+                                           <img src="assets/img/Cars/celerio-exterior-left-rear-three-quarter.webp"
+                                                class="d-block w-100" alt="...">
+                                       </div>
+                                       <div class="carousel-item">
+                                           <img src="assets/img/Cars/celerio-exterior-right-side-view.webp"
+                                                class="d-block w-100" alt="...">
+                                       </div>
+
+                                   </div>
+                                   <h1>Celerio Auto</h1>
+                               </div>
+                           </div>
+                       </div>
+                       <br>
+                       <br>
+                       <div class="col-md-4">
+                           <div>
+                               <div id="carouselExampleSlidesOnly4" class="carousel slide" data-bs-ride="carousel">
+                                   <div class="carousel-inner">
+                                       <div class="carousel-item active">
+                                           <img src="assets/img/Cars/Perodua_Axia_2014_360_720_50-23.jpg"
+                                                class="d-block w-100"
+                                                alt="...">
+                                       </div>
+                                       <div class="carousel-item">
+                                           <img src="assets/img/Cars/Perodua_Axia_2014_360_720_50-30.jpg"
+                                                class="d-block w-100"
+                                                alt="...">
+                                       </div>
+                                       <div class="carousel-item">
+                                           <img src="assets/img/Cars/Perodua_Axia_2014_360_720_50-47.jpg"
+                                                class="d-block w-100"
+                                                alt="...">
+                                       </div>
+
+                                   </div>
+                                   <h1>Perodua-Axia-Auto</h1>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="col-md-4">
+                           <div>
+                               <div id="carouselExampleSlidesOnly5" class="carousel slide" data-bs-ride="carousel">
+                                   <div class="carousel-inner">
+                                       <div class="carousel-item active">
+                                           <img src="assets/img/Cars/aqua.jpeg" class="d-block w-100" alt="...">
+                                       </div>
+                                       <div class="carousel-item">
+                                           <img src="assets/img/Cars/images.jpeg" class="d-block w-100" alt="...">
+                                       </div>
+                                       <div class="carousel-item">
+                                           <img src="assets/img/Cars/images%20(1).jpeg" class="d-block w-100"
+                                                alt="...">
+                                       </div>
+
+                                   </div>
+                                   <h1>Prius_Aqua_Auto</h1>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </section>
+           <section>
+               <h1><p><strong>Premium Car </strong></p></h1>
+
+               <div class="container text-center">
+                   <div class="row" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                       <div class="col-md-4">
+                           <div id="carouselExampleSlidesOnly6" class="carousel slide" data-bs-ride="carousel">
+                               <div class="carousel-inner">
+                                   <div class="carousel-item active">
+                                       <img src="assets/img/Cars/download.jpeg" class="d-block w-100" alt="...">
+                                   </div>
+                                   <div class="carousel-item">
+                                       <img src="assets/img/Cars/download%20(1).jpeg" class="d-block w-100"
+                                            alt="...">
+                                   </div>
+                                   <div class="carousel-item">
+                                       <img src="assets/img/Cars/11.jpeg" class="d-block w-100" alt="...">
+                                   </div>
+
+                               </div>
+                               <h1>Corolla_axio</h1>
+                           </div>
+                       </div>
+                       <div class="col-md-4">
+                           <div id="carouselExampleSlidesOnly7" class="carousel slide" data-bs-ride="carousel">
+                               <div class="carousel-inner">
+                                   <div class="carousel-item active">
+                                       <img src="assets/img/images%20(1).jpeg" class="d-block w-100" alt="...">
+                                   </div>
+                                   <div class="carousel-item">
+                                       <img src="assets/img/Cars/images%20(2).jpeg" class="d-block w-100"
+                                            alt="...">
+                                   </div>
+                                   <div class="carousel-item">
+                                       <img src="assets/img/Cars/png-transparent-perodua-bezza-car-perodua-myvi-perodua-axia-car-compact-car-sedan-car.png"
+                                            class="d-block w-100" alt="...">
+                                   </div>
+
+                               </div>
+                               <h1>Perodua Bezza Prime Sedan</h1>
+                           </div>
+                       </div>
+                       <div class="col-md-4">
+                           <div id="carouselExampleSlidesOnly8" class="carousel slide" data-bs-ride="carousel">
+                               <div class="carousel-inner">
+                                   <div class="carousel-item active">
+                                       <img src="assets/img/Cars/download%20(2).jpeg" class="d-block w-100"
+                                            alt="...">
+                                   </div>
+                                   <div class="carousel-item">
+                                       <img src="assets/img/Cars/download%20(3).jpeg" class="d-block w-100"
+                                            alt="...">
+                                   </div>
+                                   <div class="carousel-item">
+                                       <img src="assets/img/Cars/download%20(4).jpeg" class="d-block w-100"
+                                            alt="...">
+                                   </div>
+
+                               </div>
+                               <h1>Toyota Allion NZT 260</h1>
+                           </div>
+                       </div>
+                       <div class="col-md-4">
+                           <div id="carouselExampleSlidesOnly9" class="carousel slide" data-bs-ride="carousel">
+                               <div class="carousel-inner">
+                                   <div class="carousel-item active">
+                                       <img src="assets/img/Cars/download.jpeg" class="d-block w-100" alt="...">
+                                   </div>
+                                   <div class="carousel-item">
+                                       <img src="assets/img/Cars/download%20(1).jpeg" class="d-block w-100"
+                                            alt="...">
+                                   </div>
+                                   <div class="carousel-item">
+                                       <img src="assets/img/Cars/11.jpeg" class="d-block w-100" alt="...">
+                                   </div>
+
+                               </div>
+                               <h1>Toyota Axio NKR 165</h1>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </section>
+           <section>
+               <h1><p><strong>Luxury Car </strong></p></h1>
+
+               <div class="container text-center">
+                   <div class="row" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                       <div class="col-md-4">
+                           <div id="carouselExampleSlidesOnly10" class="carousel slide" data-bs-ride="carousel">
+                               <div class="carousel-inner">
+                                   <div class="carousel-item active">
+                                       <img src="assets/img/Cars/download.jpeg" class="d-block w-100" alt="...">
+                                   </div>
+                                   <div class="carousel-item">
+                                       <img src="assets/img/Cars/download%20(1).jpeg" class="d-block w-100"
+                                            alt="...">
+                                   </div>
+                                   <div class="carousel-item">
+                                       <img src="assets/img/Cars/11.jpeg" class="d-block w-100" alt="...">
+                                   </div>
+
+                               </div>
+                               <h1>Toyota_Premio</h1>
+                               <h1>Luxury Car Available</h1>
+
+                           </div>
+                       </div>
+                       <div class="col-md-4">
+                           <div id="carouselExampleSlidesOnly11" class="carousel slide" data-bs-ride="carousel">
+                               <div class="carousel-inner">
+                                   <div class="carousel-item active">
+                                       <img src="assets/img/Cars/beaimages.jpeg" class="d-block w-100" alt="...">
+
+                                   </div>
+                                   <div class="carousel-item">
+                                       <img src="assets/img/Cars/benimages.jpeg" class="d-block w-100" alt="...">
+                                   </div>
+                                   <div class="carousel-item">
+                                       <img src="assets/img/Cars/2017-C-CabrioCarSlide.gif" class="d-block w-100"
+                                            alt="...">
+                                   </div>
+                               </div>
+                               <h1>Mercedes</h1>
+                               <h1>Luxury Car Available</h1>
+
+                           </div>
+                       </div>
+                       <div class="col-md-4">
+                           <div id="carouselExampleSlidesOnly12" class="carousel slide" data-bs-ride="carousel">
+                               <div class="carousel-inner">
+                                   <div class="carousel-item active">
+                                       <img src="assets/img/Cars/i8download%20(3).jpeg" class="d-block w-100"
+                                            alt="...">
+                                   </div>
+                                   <div class="carousel-item">
+                                       <img src="assets/img/Cars/188images.jpeg" class="d-block w-100" alt="...">
+                                   </div>
+                                   <div class="carousel-item">
+                                       <img src="assets/img/Cars/12download%20(3).jpeg" class="d-block w-100"
+                                            alt="...">
+                                   </div>
+
+                               </div>
+                               <h1>BMW i8</h1>
+                               <h1>Luxury Car Available</h1>
+
+                           </div>
+                       </div>
+
+                   </div>
+               </div>
+           </section>
+           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+               <div class="modal-dialog">
+                   <div class="modal-content">
+                       <div class="modal-header">
+                           <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                           <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                   aria-label="Close"></button>
+                       </div>
+                       <div class="modal-body">
+                           genaral
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+
+           </div>
+           <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+               <div class="modal-dialog">
+                   <div class="modal-content">
+                       <div class="modal-header">
+                           <h1 class="modal-title fs-5" id="exampleModalLabel2">Modal title</h1>
+                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                       </div>
+                       <div class="modal-body">
+                           premium
+                       </div>
+                   </div>
+               </div>
+           </div>
+           </div>
+           <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+               <div class="modal-dialog">
+                   <div class="modal-content">
+                       <div class="modal-header">
+                           <h1 class="modal-title fs-5" id="exampleModalLabel3">Modal title</h1>
+                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                       </div>
+                       <div class="modal-body">
+                           luxry
+                       </div>
+                   </div>
+               </div>
+           </div>
+           </div>
+
+       </section>
 
 </main>
+<main id="OrderPage" style="display:none"  >
+
+    <section>
+        <h1 class="bg-success p-2 text-white bg-opacity-75">Rent Details</h1>
+    </section>
+
+    <section>
+        <form id="OrderForm">
+            <div class="container-fluid text-start ">
+                <div class="row ">
+
+                    <div style="border: 2px solid red" class="col ">
+
+                        <div class="row">
+                            <h1 class="bg-success p-2 text-black bg-opacity-75">Customer Details</h1>
+                            <div class="d-flex justify-content-around">
+
+
+                                <div class="mb-3">
+                                    <label for="Date" class="form-label text-black">Date</label>
+                                    <label type="date" class="form-control" id="Date" name="date" aria-label="date"></label>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-evenly">
+
+<!--                                <div class="mb-3">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <label for="selectCusID" class="form-label text-black">Customer</label>-->
+<!--                                        <select class="form-control" id="selectCusID">-->
+<!--                                        </select>-->
+<!--                                        <span class="control-error"-->
+<!--                                              id="cus-empty-error"></span>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+
+                                <!--                                <div class="mb-3">-->
+                                <!--                                    <label for="CusId" class="form-label text-black">Cus Id</label>-->
+                                <!--                                    <input type="text" class="form-control" id="CusId" name="cusId" aria-label="cusID">-->
+                                <!--                                </div>-->
+
+                                <div class="mb-3">
+                                    <label for="CusId" class="form-label text-black">CustomerId</label>
+                                    <input type="text" class="form-control" id="CusId" placeholder="1">
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="CusName" class="form-label text-black">CustomerName</label>
+                                    <input type="text" class="form-control" id="CusName" placeholder="amara">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="CusAddress" class="form-label text-black">CustomerAddress</label>
+                                    <input type="text" class="form-control" id="CusAddress" placeholder="Galle">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-evenly">
+
+                                <div class="mb-3">
+                                    <label for="CusEmail" class="form-label text-black">CustomerEmail</label>
+                                    <input type="text" class="form-control" id="CusEmail" placeholder="@gmail.com">
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="ContNo" class="form-label text-black">ContNo</label>
+                                    <input type="number" class="form-control" id="ContNo" placeholder="+9477153032">
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="CusNic" class="form-label text-black">Nic</label>
+                                    <input type="text" class="form-control" id="CusNic" placeholder="2..0v">
+                                </div>
+                                <!--                            <div class="mb-3">-->
+                                <!--                                <label for="ItemCode2" class="form-label text-black col-form-label-lg">ItemCode</label>-->
+                                <!--                                <select class="form-label" id="ItemCode2" aria-label="Default select example">-->
+                                <!--                                    <option value="1">I001</option>-->
+                                <!--                                    <option value="2">I002</option>-->
+                                <!--                                    <option value="3">I003</option>-->
+                                <!--                                </select>-->
+                                <!--                            </div>-->
+                            </div>
+                            <div>
+                                <h1 class="bg-success p-2 text-black bg-opacity-75">Driver Details</h1>
+
+                            </div>
+                            <div class="d-flex justify-content-evenly">
+                                <div class="mb-3">
+                                    <div class="form-group">
+                                        <label>Driver :</label>
+                                        <select class="form-control" id="selectDriID">
+                                        </select>
+                                        <span class="control-error"
+                                              id="Dri-empty-error"></span>
+                                    </div>
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Dname" class="form-label text-black">Name</label>
+                                    <input type="text" class="form-control" id="Dname" name="name"
+                                           aria-label="Dname" placeholder="Lal">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="LicNo" class="form-label text-black">LicNo</label>
+                                    <input type="number" class="form-control" id="LicNo" name="licNo"
+                                           placeholder="20211">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-evenly">
+                                <div class="mb-3">
+                                    <label for="Availability" class="form-label text-black">Availability</label>
+                                    <input type="text" class="form-control" id="Availabilitys" name="availability"
+                                           placeholder="20211">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Address" class="form-label text-black">Address</label>
+                                    <input type="text" class="form-control" name="address" id="Address"
+                                           placeholder="20211">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div style="border: 2px solid red" class="col">
+                        <div class="row">
+                            <div>
+                                <h1 class="bg-success p-2 text-black bg-opacity-75">Car Details</h1>
+
+                            </div>
+                            <br>
+
+                            <div class="d-flex justify-content-evenly">
+
+
+
+
+
+                                    <div class="mb-3">
+                                        <label for="txtType">Type</label>
+                                        <select type="text" class="form-control is-invalid" id="txtType"  name="type" >
+                                            <option ></option>
+                                            <option >GENERAL</option>
+                                            <option >PREMIUM</option>
+                                            <option >LUXURY</option>
+                                        </select>
+
+                                    </div>
+<!--                                    <div class="mb-3">-->
+<!--                                        <label for="selecType" class="form-label text-black">Car Type</label>-->
+<!--                                        <input type="text" class="form-control" id="selecType" placeholder="General">-->
+<!--                                    </div>-->
+                                    <div class="mb-3">
+                                        <div class="form-group">
+                                            <label>Car :</label>
+                                            <select class="form-control" id="selectCarID">
+                                            </select>
+                                            <span class="control-error"
+                                                  id="Car-empty-error"></span>
+                                        </div>
+
+                                    </div>
+
+
+                                <div class="mb-3">
+                                    <label for="Version" class="form-label text-black">Car Version</label>
+                                    <input type="text" class="form-control" id="Version" placeholder="BMW">
+                                </div>
+                            </div>
+
+                            <br>
+                            <div class="d-flex justify-content-evenly">
+
+                                <div class="mb-3">
+                                    <label for="Fuel" class="form-label text-black">Car Fuel</label>
+                                    <input type="text" class="form-control" id="Fuel" placeholder="Petral">
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="Passengers" class="form-label text-black">Passengers</label>
+                                    <input type="text" class="form-control" id="Passengers" placeholder="5">
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="Transmission" class="form-label text-black">Transmission</label>
+                                    <input type="text" class="form-control" id="Transmission" placeholder="Auto">
+                                </div>
+                            </div>
+
+                            <br>
+                            <div class="d-flex justify-content-evenly">
+
+                                <div class="mb-3">
+                                    <label for="Colour" class="form-label text-black">Colour</label>
+                                    <input type="text" class="form-control" id="Colour" placeholder="Black">
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="Rent_duration" class="form-label text-black">Rent_duration</label>
+                                    <input type="text" class="form-control" id="Rent_duration" placeholder="Daily">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="Price_ExtraKm" class="form-label text-black">Price_ExtraKm</label>
+                                    <input type="number" class="form-control" id="Price_ExtraKm" placeholder="200">
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="d-flex justify-content-evenly">
+                                <div class=" mb-3">
+                                    <label for="NoOfCar" class="form-label text-black">No Of Car</label>
+                                    <input type="number" class="form-control" id="NoOfCar">
+                                </div>
+                                <br>
+
+
+                                <div class=" mb-3">
+                                    <label for="Price" class="form-label text-black">Price per car</label>
+                                    <input type="number" class="form-control" id="Price">
+                                </div>
+
+                                <div class=" mb-3">
+                                    <label for="need" class="form-label text-black">Need Cars</label>
+                                    <input type="number" class="form-control"
+                                           name="need"
+                                           aria-label="Need" id="Need">
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-evenly">
+
+                                <div class=" mb-3">
+                                    <label for="Total" class="form-label text-black">TOTAL</label>
+                                    <input type="number" class="form-control" name="total"
+                                           aria-label="Total" id="Total">
+                                </div>
+                                <br>
+                                <div class="text-end">
+                                    <button id="btnAddToTable" type="button" class="btn btn-danger  btn-lg">Add Item
+                                    </button>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+
+                        </div>
+                        <br>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </form>
+
+        <section>
+            <table style="width: 100%" border="2px solid red"
+                   class="col table table-bordered border-primary table-dark  table-striped">
+                <thead>
+                <tr class="table-dark table-striped">
+                    <th scope="col">Order</th>
+                    <!--                <th scope="col">Date</th>-->
+                    <!--                <th scope="col">CusID</th>-->
+                    <!--                <th scope="col">ContNo</th>-->
+                    <th scope="col">DriID</th>
+                    <th scope="col">CarType</th>
+                    <th scope="col">CarID</th>
+                    <th scope="col">Version</th>
+                    <th scope="col">Need Cars</th>
+                    <th scope="col">Total</th>
+
+
+                </tr>
+                </thead>
+                <tbody id="orderTable2">
+
+                </tbody>
+
+            </table>
+
+            <div class="text-end">
+                <button type="button" id="PlaceOrder" class="btn btn-success  btn-lg">Rent Car</button>
+
+            </div>
+
+        </section>
+
+    </section>
+    <br>
+    <br>
+
+</main>
+
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/jquery-3.6.1.min.js"></script>
 
@@ -943,8 +1128,9 @@
 </script>
 <!--//Customer Login-->
 <script>
+
     $("#SingInCustomerlogin").click(function () {
-loadCustomerlogin();
+            loadCustomerlogin();
     });
 
   function  loadCustomerlogin() {
@@ -956,10 +1142,19 @@ loadCustomerlogin();
           success: function (resp) {
               for (let cus of resp.data) {
                   console.log(cus.email + cus.password);
+                  console.log(cus.id + cus.name);
+                  console.log(cus.nic + cus.concat);
 
-                  if(userEmail == cus.email && userPassword == cus.password){
-                      window.location="OrdersForm.html"
-
+                  if(userEmail === cus.email && userPassword === cus.password){
+                      // window.location="OrdersForm.html"
+                      alert("You have successfully logged in.");
+                      $("#placeOrders").css('display', 'block');
+                      $("#CusId").val(cus.id);
+                      $("#CusName").val(cus.name);
+                      $("#CusAddress").val(cus.address);
+                      $("#CusEmail").val(cus.email);
+                      $("#ContNo").val(cus.conNo);
+                      $("#CusNic").val(cus.nic);
                   }
 
               }
@@ -968,11 +1163,22 @@ loadCustomerlogin();
   }
 
 </script>
+<script>
+    var timeDisplay = document.getElementById("Date");
+
+    function refreshTime() {
+        var dateString = new Date().toLocaleString("en-US", {timeZone: "Asia/Colombo"});
+        var formattedString = dateString.replace(", ", " - ");
+        timeDisplay.innerHTML = formattedString;
+    }
+
+    setInterval(refreshTime, 1000);
+</script>
 
 <script>
 
 
-    <!--customer table show-->
+    // <!--customer table show-->
     let baseURL = "http://localhost:8080/";
     $("#SaveCustomer").click(function () {
 
@@ -994,12 +1200,120 @@ loadCustomerlogin();
         });
     });
 
+    getAllCar()
+
+
+    function getAllCar() {
+        // $("#selectCarType").empty();
+
+        $("#selectCarID").empty();
+        $.ajax({
+            url: baseURL + "Car",
+            dataType: "json",
+            success: function (resp) {
+                console.log(resp);
+
+                for (let cus of resp.data) {
+
+
+                    $("#selectCarType").append(`<!--<option value="${cus.type}">${cus.type}</option>-->`);
+
+                    if(cus.type == $("#txtType").val()){
+                        $("#selectCarID").append(`<option value="${cus.carId}">${cus.carId}</option>`);
+                    }
+
+
+                }
+            }
+        });
+
+    }
+
+    $("#txtType").change(function () {
+
+        // let carType = $("#selectCarType").val();
+        // $("#selectCarType").val(carType);
+        let res = $("#txtType").val();
+        if (res.length > 0) {
+
+
+            getAllCar()
+
+        }
+        searchCar();
+
+    });
+
+    function searchCar(carId) {
+        let response = "";
+        $.ajax({
+            url: baseURL + "Car",
+            dataType: "json",
+            async: false,
+            success: function (resp) {
+                response = resp.data.filter((c) => {
+
+                        console.log(c.carId == carId && c.type == $("#txtType").val())
+                    return (c.carId == carId && c.type == $("#txtType").val());
+                    //     if(c.type == $("#txtType").val() ){
+                    //         return  c.carId;
+                    //
+                    //     }else {
+                    //         console.log("addddp")
+                    //         return null;
+                    //     }
+
+                });
+            }
+        });
+        return response;
+    }
+
+    $("#selectCarID").change(function () {
+
+
+        let carId = $("#selectCarID").val();
+        // $("#selectCarID").text(carId);
+        let res = searchCar(carId);
+
+        if (res.length > 0) {
+
+            // $("#selecType").val(res[0].type);
+            $("#Version").val(res[0].version);
+            $("#Fuel").val(res[0].fuel);
+            $("#Passengers").val(res[0].passengers);
+            $("#Transmission").val(res[0].transmission);
+            $("#Colour").val(res[0].colour);
+            $("#Rent_duration").val(res[0].rent_duration);
+            $("#Price_ExtraKm").val(res[0].price_ExtraKm);
+            $("#NoOfCar").val(res[0].amount);
+
+            $("#Price").val(res[0].price);
+
+        }
+
+    });
+
+
+
+    $("#placeOrdersButton").click(function () {
+        $("#HomePage").css('display', 'none');
+        $("#OrderPage").css('display', 'block');
+
+    });
+
+    $("#OrderSetPage").click(function () {
+        loadCustomerlogin();
+    });
+
+
+
+
     $("#BtnShowCustomer").click(function () {
         $("#tableDriverDetails").css('display', 'none');
         $("#tableDetails").css('display', 'none');
         $("#tableCarDetails").css('display', 'none');
         $("#tableDriverDetailsShedule").css('display', 'none');
-
         $("#tablePaymentDetails").css('display', 'none');
         getAllCustomer();
 
@@ -1033,37 +1347,6 @@ loadCustomerlogin();
         getAllPayment();
     });
 
-
-        $("#SingInCustomerlogin2").click(function () {
-
-            $("#tableDriverDetails").css('display', 'none');
-            $("#tableDetails").css('display', 'none');
-            $("#tableCarDetails").css('display', 'none');
-            $("#tableDriverDetailsShedule").css('display', 'block');
-            $("#tablePaymentDetails").css('display', 'none');
-
-
-            let userEmail = $("#exampleInputEmail").val();
-            let userPassword = $("#exampleInputPassword1c").val();
-            $.ajax({
-                url: baseURL + "Driver",
-                dataType: "json",
-                success: function (resp) {
-                    for (let cus of resp.data) {
-                        console.log(cus.user + cus.licNo);
-
-                        if(userEmail == cus.user && userPassword == cus.licNo){
-
-
-                        }
-
-                    }
-                }
-            });
-       getAllDriverDetails();
-        });
-
-
     function getAllDriverDetails() {
 
         $("#tblDriverDetails").empty();
@@ -1081,7 +1364,7 @@ loadCustomerlogin();
             }
         });
     }
-    function getAllCar() {
+    function getAllCars() {
         $("#tblCar").empty();
 
         $.ajax({
@@ -1103,42 +1386,7 @@ loadCustomerlogin();
             }
         });
     }
-    function getAllCustomer() {
-        $("#tblCustomer").empty();
 
-        $.ajax({
-            url: baseURL + "Customer",
-            dataType: "json",
-            success: function (resp) {
-                for (let cus of resp.data) {
-                    var row = '<tr><td>' + cus.id + '</td><td>' + cus.name + '</td><td>' + cus.address + '</td><td>' + cus.email + '</td><td>' + cus.conNo + '</td><td>' + cus.nic + '</td><td>' + cus.password + '</td></tr>';
-
-                    $("#tblCustomer").append(row);
-                }
-                setTextFieldValues("", "", "", "", "", "", "");
-            }
-        });
-    }
-    function getAllPayment() {
-        $("#tblPayment").empty();
-
-        $.ajax({
-            url: baseURL + "Payment",
-            dataType: "json",
-            success: function (resp) {
-                for (let cus of resp.data) {
-                    var row = '<tr><td>' + cus.user + '</td><td>' + cus.version +
-                        '</td><td>' + cus.type + '</td><td>' +
-                        cus.travelDistance + '</td><td>' + cus.rentFree
-                        + '</td><td>' + cus.lossDamage
-                        + '</td><td>'+ cus.extraKmPrice + '</td></tr>';
-
-                    $("#tblPayment").append(row);
-                }
-                setTextFieldValues("", "", "", "", "", "", "");
-            }
-        });
-    }
     function getAllDriver() {
         $("#tblDriver").empty();
 

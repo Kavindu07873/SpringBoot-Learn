@@ -108,11 +108,13 @@
 
             <div class="row">
                 <div class="col">
-                    <label for="txtCustomerID">Customer ID</label>
-                    <input type="text" id="txtCustomerID" class="form-control d-inline-block is-invalid"  placeholder="C001"
-                           name="id"
-                           aria-label="ID" required>
+                    <label for="lblCustomerID">Customer ID</label>
+<!--                    <input type="text" id="txtCustomerID" class="form-control d-inline-block is-invalid"  placeholder="C001"-->
+<!--                           name="id"-->
+<!--                           aria-label="ID" required>-->
+                    <label type="text" id="lblCustomerID" class="form-control d-inline-block "  placeholder="C001"></label>
                 </div>
+
                 <div class="col">
                     <label for="txtCustomerName">Customer Name</label>
                     <input type="text" class="form-control is-invalid" id="txtCustomerName" placeholder="20000.00" name="name"
@@ -231,7 +233,7 @@
     //update value
     $("#BtnUpdate").click(function () {
 
-        let customerID = $("#txtCustomerID").val();
+        let customerID = $("#lblCustomerID").text();
         let customerName = $("#txtCustomerName").val();
         let customerAddress = $("#txtCustomerAddress").val();
         let customerEmail = $("#txtCustomerEmail").val();
@@ -245,7 +247,7 @@
             name: customerName,
             address: customerAddress,
             email : customerEmail,
-            conno:customerContact,
+            conNo:customerContact,
             password:customerPassword,
             nic:customerNic
         }
@@ -271,9 +273,10 @@
     //Delete Value
     $("#BtnDelete").click(function () {
 
-        let id = $("#txtCustomerID").val();
+        let id = $("#lblCustomerID").text();
+        console.log(id)
         $.ajax({
-            url: baseURL+"Customer?id=" + id + "",
+            url: baseURL+"Customer?id="+id+"",
             method: "delete",
             dataType:"json",
             success: function (resp) {
@@ -295,7 +298,10 @@
             dataType: "json",
             success: function (resp) {
                 for (let cus of resp.data) {
-                    var row = '<tr><td>' + cus.id + '</td><td>' + cus.name + '</td><td>' + cus.address + '</td><td>' + cus.email + '</td><td>' + cus.conno + '</td><td>' + cus.nic + '</td><td>' + cus.password + '</td></tr>';
+                    // console.log(cus.id)
+                    // let CusId = "C-"+cus.id
+                    // console.log(CusId)
+                    var row = '<tr><td>' + "C- "+cus.id + '</td><td>' + cus.name + '</td><td>' + cus.address + '</td><td>' + cus.email + '</td><td>' + cus.conno + '</td><td>' + cus.nic + '</td><td>' + cus.password + '</td></tr>';
                     $("#tblCustomer").append(row);
                 }
                 EventBindingvalue();
@@ -306,34 +312,38 @@
     }
 
 
-    function setTextFieldValues(id, Name, Address, Email, conno, Nic, Password) {
-        $("#txtCustomerID").val(id);
+    function setTextFieldValues(id, Name, Address, Email, conNo, Nic, Password) {
+        $("#lblCustomerID").text(id);
         $("#txtCustomerName").val(Name);
         $("#txtCustomerAddress").val(Address);
         $("#txtCustomerEmail").val(Email);
-        $("#txtCustomerCon").val(conno);
+        $("#txtCustomerCon").val(conNo);
         $("#txtCustomerPassword").val(Password);
         $("#txtCustomerNic").val(Nic);
     }
 
     //  mehidi table eka click karama data print we
     function EventBindingvalue() {
-        $("#tblCustomer>tr").click(function () {
 
-            let id = $(this).children(":eq(0)").text();
+        $("#tblCustomer>tr").click(function () {
+            $("#lblCustomerID").append("")
+
+            let ids = $(this).children(":eq(0)").text();
+            let  id = ids.slice(-2)
+            // console.log(id)
             let Name = $(this).children(":eq(1)").text();
             let Address = $(this).children(":eq(2)").text();
             let Email = $(this).children(":eq(3)").text();
-            let conno = $(this).children(":eq(4)").text();
+            let conNo = $(this).children(":eq(4)").text();
             let Password = $(this).children(":eq(5)").text();
             let Nic = $(this).children(":eq(6)").text();
 
             //  tble eke textfild walata data add karanawa
-            $("#txtCustomerID").val(id);
+            $("#lblCustomerID").text(id)
             $("#txtCustomerName").val(Name);
             $("#txtCustomerAddress").val(Address);
             $("#txtCustomerEmail").val(Email);
-            $("#txtCustomerCon").val(conno);
+            $("#txtCustomerCon").val(conNo);
             $("#txtCustomerPassword").val(Password);
             $("#txtCustomerNic").val(Nic);
 
